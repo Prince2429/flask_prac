@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="/static/welcome.css">
+    <title>Animal Trivia</title>
+</head>
+<body class='container'>
+    <h1>Animal Trivia App</h1>
+    <a class='new-question' href="{{url_for('add_question')}}">Add a question</a>
+    <ul>
+        {% for question in questions %}
+        <li>
+            <a href="{{url_for('question_view', index=loop.index0)}}">{{question.question}} </a>
+        </li>
+        {% endfor %}
+    </ul>        
+</body>
+</html>
